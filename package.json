@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "fast-html-parser": "^1.0.1",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "thread-sleep": "^2.0.0"
   }
 }
