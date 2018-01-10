@@ -14,6 +14,7 @@
     "babel-preset-env": "^1.6.1"
   },
   "dependencies": {
+    "collections": "^5.1.2",
     "fast-html-parser": "^1.0.1",
     "request": "^2.83.0",
     "thread-sleep": "^2.0.0"
