@@ -1,0 +1,7 @@
+CREATE TABLE items (
+  id INTEGER AUTO_INCREMENT,
+  name VARCHAR(55) UNIQUE NOT NULL,
+  app_id INTEGER,
+  quality INTEGER,
+  PRIMARY KEY (id)
+)
