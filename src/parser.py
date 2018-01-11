@@ -1,4 +1,7 @@
 import requests
+import MySQLdb
+
+
 try:
     from BeautifulSoup import BeautifulSoup
 except ImportError:
@@ -6,14 +9,16 @@ except ImportError:
 
 
 APP_ID = 730
-ALL_COUNT = 1050
-PAGE_SIZE = 50
+ALL_COUNT = 1000
+PAGE_SIZE = 100
 
 countPerSecond = 0
 offset = 0
 
 
-for x in range(0, 1):
+items = []
+
+for x in range(0, 11):
     print(str(x) + " " + str(offset))
     url = 'http://steamcommunity.com/market/search/render?appid=' + str(APP_ID) + '&query=&start=' + str(offset) + \
           '&count=' + str(PAGE_SIZE)
@@ -26,8 +31,18 @@ for x in range(0, 1):
     for y in range(1, PAGE_SIZE):
         idDiv = 'result_' + str(y) + '_name'
         result = parse.find(id=idDiv)
-        print(result.getText())
+        items.append(result.getText())
+
+print(len(items))
 
 
+db = MySQLdb.connect(host="localhost",
+                     user="root",
+                     password="root",
+                     db="vital-cases")
+
+cursor = db.cursor()
+
+cursor.execute("INSERT INTO items ()")
 
 
